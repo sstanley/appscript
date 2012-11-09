@@ -122,7 +122,7 @@
 			case 'q':
 				packAsSInt64:
 					sint64 = [anObject longLongValue];
-					if (sint64 >= 0x80000000 && sint64 < 0x7FFFFFFF)
+					if (sint64 <= -0x80000000 && sint64 < 0x7FFFFFFF)
 						goto packAsSInt32;
 					result = [NSAppleEventDescriptor descriptorWithDescriptorType: typeSInt64
 																			bytes: &sint64
